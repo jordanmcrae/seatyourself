@@ -8,6 +8,24 @@
 </head>
 <body>
 
+ <div class="container" id="flash_class">
+    <div class="panel-body">
+    <% if flash[:notice] %>
+      <h5 id="notice" class="alert alert-success"><%= flash[:notice] %></h5>
+    <% end %>
+    <% if flash[:alert] %>
+      <h5 id="alert" class="alert alert-danger"><%= flash[:alert] %></h5>
+    <% end %>
+    </div>
+  </div>
+  <div>
+  <% if current_user %>
+    <h5> Signed in as <%= current_user.first_name %>. <%= link_to "Log out", session_path("current"), :method => :delete %></h5>
+      <% else %>
+    <%= %>
+  <% end %>
+  </div>
+
 <%= yield %>
 
 </body>
