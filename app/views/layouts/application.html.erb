@@ -2,11 +2,74 @@
 <html>
 <head>
   <title>Seatyourself</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="main">
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-inverse" id="navigation-main">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="nav-title" href="/restaurants">Seat Yourself</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/restaurants">Home<span class="sr-only">(current)</span></a></li>
+
+
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Restaurants<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/restaurants">Restaurants Near You</a></li>
+            <li><a href="/restaurants/new">Add your restaurant</a></li>
+          </ul>
+      </li>
+
+   <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/sessions/new">Login</a></li>
+            <li><a href="/users/new">Register</a></li>
+          </ul>
+      </li>
+      <!-- Searchbar? -->
+<!--
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Body -->
+  <div class="container" id="login-status-bar">
+    <% if current_user %>
+      <h5> Signed in as <%= current_user.first_name %> <%= link_to "[Log out]", session_path("current"), :method => :delete %></h4>
+        <% else %>
+      <%= %>
+    <% end %>
+  </div>
+
+
 
  <div class="container" id="flash_class">
     <div class="panel-body">
@@ -18,15 +81,15 @@
     <% end %>
     </div>
   </div>
-  <div>
-  <% if current_user %>
-    <h5> Signed in as <%= current_user.first_name %>. <%= link_to "Log out", session_path("current"), :method => :delete %></h5>
-      <% else %>
-    <%= %>
-  <% end %>
-  </div>
+
 
 <%= yield %>
+
+
+<!-- Fixed Footer -->
+<div class="footer">
+  <h6 id="footer-color">Seat Yourself 2015</h6>
+</div>
 
 </body>
 </html>

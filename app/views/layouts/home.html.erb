@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seatyourself</title>
+  <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="body">
+
+
+
+  <div class="container" id="landing">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-info title"><h1 class="welcome">Welcome to Seat Yourself</h1></div>
+        </div>
+
+        <div class="row">
+
+          <a href="sessions/new">
+            <div class="col-md-4"></div>
+              <div class="col-md-2 btn btn-info" id="button-home1">
+                <h4>
+                  <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+                    Login
+                </h4>
+            </div>
+          </a>
+
+           <a href="users/new">
+             <div class="col-md-2 btn btn-info" id="button-home2">
+                <h4>
+                  Signup
+                  <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+                </h4>
+            </div>
+          </a>
+
+          <div class="col-md-4"></div>
+
+        </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</body>
+</html>

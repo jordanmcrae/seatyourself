@@ -1,36 +1,36 @@
 <%= form_for @restaurant do |f| %>
 
   <% if @restaurant.errors.any? %>
-    <h4><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h4>
+    <h4 class="error-text"><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h4>
     <ul>
       <% @restaurant.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="secondary-error-text"><%= msg %></li>
       <% end %>
     </ul>
 
   <% end %>
 
-    <p>
+    <p class="secondary-color">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
     </p>
 
-    <p>
+    <p class="secondary-color">
       <%= f.label :phone %><br>
       <%= f.text_field :phone %>
     </p>
 
-    <p>
+    <p class="secondary-color">
       <%= f.label :address %><br>
       <%= f.text_field :address %>
     </p>
 
-    <p>
+    <p class="secondary-color">
       <%= f.label :description %><br>
       <%= f.text_field :description %>
     </p>
 
-    <p>
+    <p class="secondary-color submit-but">
       <%= f.submit "Submit" %>
     </p>
 

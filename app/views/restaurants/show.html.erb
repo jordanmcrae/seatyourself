@@ -1,6 +1,8 @@
-<%= link_to "Back to restaurants", restaurants_url %> <% if current_user %> | <span class="label label-warning"><%= link_to "Edit", edit_restaurant_path(@restaurant) %></span> | <span class="label label-danger"><%= link_to "Delete", @restaurant, method: :delete, data: {confirm: "Are you sure?"} %><% end %></span>
+<div class="container con-background">
+  <%= link_to "Back to restaurants", restaurants_url %> <% if current_user %> | <span class="label label-info"><%= link_to "Edit", edit_restaurant_path(@restaurant) %></span> | <span class="label label-info"><%= link_to "Delete", @restaurant, method: :delete, data: {confirm: "Are you sure?"} %><% end %></span>
 
-<h1><%= @restaurant.name %></h1>
-<h3><%= @restaurant.phone %></h3>
-<h4><%= @restaurant.address %></h4>
-<h5><%= @restaurant.description %></h5>
+  <h1 class="header-color"><%= @restaurant.name %></h1><hr>
+  <h3 class="secondary-color"><%= @restaurant.phone %></h3>
+  <h4 class="secondary-color"><%= @restaurant.address %></h4>
+  <h5 class="secondary-color"><%= @restaurant.description %></h5>
+</div>

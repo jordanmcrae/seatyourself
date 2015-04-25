@@ -1,17 +1,24 @@
-<h1>Log in</h1>
+<div class="container con-background">
+<h1 class="header-color">Log in</h1>
 
-<%= form_tag sessions_path do %>
+<% if current_user %>
+  <div class="container con-background">
+  <h5 class="header-color">You are already logged in.</h5>
+  </div>
+    <% else %>
+  <%= form_tag sessions_path do %>
 
-  <div class="field">
+  <div class="field secondary-color">
     <%= label_tag :email %><br/>
     <%= text_field_tag :email %>
   </div>
 
-  <div class="field">
+  <div class="field secondary-color">
     <%= label_tag :password %><br/>
     <%= password_field_tag :password %>
   </div><br/>
 
   <div class="actions"><%= submit_tag "Log in" %></div>
+  <% end %>
 <% end %>
-
+</div>

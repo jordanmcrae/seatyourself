@@ -1,18 +1,21 @@
-<h1>Restaurants</h1>
-<%= link_to 'Add a Restaurant', new_restaurant_path %>
+<div class="container con-background">
 
-<div class="containter">
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
-       <div class="thumbnail">
-          <% @restaurants.each do |restaurant| %>
-            <a href="<%= restaurant_path(restaurant) %>"><h5><%= restaurant.name %></h5></a>
-            <h6>Address: <%= restaurant.address %></h6>
-            <hr>
-          <% end %>
+    <h1 class="header-color">Restaurants</h1>
+    <%= link_to 'Add a Restaurant', new_restaurant_path %>
+
+    <div class="containter">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+           <div class="thumbnail">
+              <% @restaurants.each do |restaurant| %>
+                <a href="<%= restaurant_path(restaurant) %>"><h5><%= restaurant.name %></h5></a>
+                  <h6>Address: <%= restaurant.address %></h6>
+                <hr>
+              <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+</div>
 
