@@ -95,3 +95,12 @@
 .secondary-error-text {
   color: #DF1515;
 }
+
+.submit-button {
+  margin-left: 3.3em;
+  margin-bottom: 1em;
+   background: transparent;
+    &:hover {
+    background: #0089d1;
+  }
+}

@@ -10,28 +10,28 @@
 
   <% end %>
 
-    <p class="secondary-color">
-      <%= f.label :name %><br>
+    <p>
+      <%= f.label :name, class: "secondary-color" %><br>
       <%= f.text_field :name %>
     </p>
 
-    <p class="secondary-color">
-      <%= f.label :phone %><br>
+    <p>
+      <%= f.label :phone, class: "secondary-color" %><br>
       <%= f.text_field :phone %>
     </p>
 
-    <p class="secondary-color">
-      <%= f.label :address %><br>
+    <p>
+      <%= f.label :address, class: "secondary-color" %><br>
       <%= f.text_field :address %>
     </p>
 
-    <p class="secondary-color">
-      <%= f.label :description %><br>
+    <p>
+      <%= f.label :description, class: "secondary-color" %><br>
       <%= f.text_field :description %>
     </p>
 
-    <p class="secondary-color submit-but">
-      <%= f.submit "Submit" %>
+    <p>
+      <%= f.submit "Submit", class: "btn-info submit-button" %>
     </p>
 
   <% end %>
