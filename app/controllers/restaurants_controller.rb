@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def index
     @restaurants = Restaurant.all
   end
@@ -16,6 +17,8 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+
+
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save

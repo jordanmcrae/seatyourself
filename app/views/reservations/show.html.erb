@@ -1,8 +1,9 @@
 <div class="container con-background">
   <%= link_to "Back to restaurants", restaurants_url %>
 
-  <h1 class="header-color"><%= @restaurant.name %></h1><hr>
-  <h3 class="secondary-color">Party Size: <%= @reservation.party_size %></h3>
-  <h3 class="secondary-color">Reservation Time: <%= @reservation.date %></h3>
+<%= @reservations each do |f| %>
+  <h1 class="header-color"><%= f.@restaurant.name %></h1><hr>
+  <h3 class="secondary-color">Party Size: <%= f.@reservation.party_size %></h3>
+  <h3 class="secondary-color">Reservation Time: <%= f.@reservation.date %></h3>
 
 </div>

@@ -20,7 +20,7 @@
 
       <p>
         <%= f.label :date, class: "secondary-color" %><br>
-        <%= f.datetime_select :date %>
+        <%= f.datetime_select :date, discard_minute: true, discard_year: true %>
       </p>
 
       <p>
