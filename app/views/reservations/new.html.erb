@@ -1,3 +1,31 @@
 <div class="container con-background">
 <h1 class="header-color">Make a Reservation</h1>
+
+  <%= form_for [@restaurant, @reservation] do |f| %>
+
+    <% if @reservation.errors.any? %>
+      <h4 class="error-text"><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h4>
+      <ul>
+        <% @reservation.errors.full_messages.each do |msg| %>
+          <li class="secondary-error-text"><%= msg %></li>
+        <% end %>
+      </ul>
+
+    <% end %>
+
+      <p>
+        <%= f.label :party_size, class: "secondary-color" %><br>
+        <%= f.text_field :party_size %>
+      </p>
+
+      <p>
+        <%= f.label :date, class: "secondary-color" %><br>
+        <%= f.datetime_select :date %>
+      </p>
+
+      <p>
+        <%= f.submit "Submit", class: "btn-info submit-button" %>
+      </p>
+
+  <% end %>
 </div>

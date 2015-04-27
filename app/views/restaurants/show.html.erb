@@ -6,3 +6,5 @@
   <h4 class="secondary-color"><%= @restaurant.address %></h4>
   <h5 class="secondary-color"><%= @restaurant.description %></h5>
 </div>
+
+<%= link_to "Book a Reservation!", new_restaurant_reservation_path(@restaurant) %>
