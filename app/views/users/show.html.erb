@@ -1,0 +1,10 @@
+<div class="container con-background">
+<h1 class="header-color">User Portal </h1>
+
+<%= current_user.reservations.each do |f| %>
+    <h3 class="secondary-color">Restaurant: <%= f.restaurant %></h3>
+    <h3 class="secondary-color">Party Size: <%= f.party_size %></h3>
+    <h3 class="secondary-color">Reservation Time: <%= f.date %></h3>
+    <hr>
+<% end %>
+</div>

@@ -4,11 +4,11 @@ before_filter :get_restaurant
 # before_filter :authenticate_owns_reservations
 
   def index
-    @reservations = Reservation.where(user_id: current_user.id) # => so only the current_user can see their own reservations
+    @reservations = current_user.reservations # => so only the current_user can see their own reservations
   end
 
   def show
-
+   @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def edit
